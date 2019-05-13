@@ -2,3 +2,11 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
 <p><%= @restaurant.category.capitalize %></p>
+<h3>Reviews</h3>
+<% @restaurant.reviews.each do |review| %>
+  <ul>
+    <li><%= review.content %> - <%= review.rating %> stars</li>
+  </ul>
+<% end %>
+
+<%= link_to "Write a review for #{@restaurant.name}", new_restaurant_review_path(@restaurant) %>

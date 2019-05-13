@@ -1,9 +1,5 @@
 <h1>Restaurants</h1>
 
-<nav class="navbar navbar-light bg-light">
-  <%= link_to "Create a new restaurant", new_restaurant_path, class: "navbar-brand" %>
-</nav>
-
 <% @restaurants.each do |restaurant| %>
   <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
 <% end %>
